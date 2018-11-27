@@ -10,7 +10,7 @@ public class Aufgabe2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Eingabe der Zahl:");
-        char[] numberArray = String.valueOf(scanner.nextInt()).toCharArray();
+        char[] numberArray = scanner.nextLine().toCharArray();
         System.out.println("Eingabe der Sterne:");
         int stars = scanner.nextInt();
 
