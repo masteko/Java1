@@ -19,12 +19,12 @@ public class Aufgabe4 {
     private static double sinus(double x) {
         double zaehler = x;
         double nenner = 1;
-        double summe = x / 1; 
-        double summand = x / 1;
+        double summand = zaehler / nenner;
+        double summe = summand; 
 
-        for (int i = 1; summand > 1E-15 || summand < -1E-15; i+=1) {
+        for (int i = 3; summand > 1E-15 || summand < -1E-15; i+=2) {
             zaehler = zaehler * x * x * (-1);
-            nenner = nenner * (i * 2) * (i * 2 + 1);
+            nenner = nenner * i * (i - 1);
             summand = zaehler / nenner;
             summe += summand;
         }
