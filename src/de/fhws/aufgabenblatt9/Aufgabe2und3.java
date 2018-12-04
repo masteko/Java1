@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Aufgabe2
  */
-public class Aufgabe2 {
+public class Aufgabe2und3 {
 
     public static void sort(double[] array) {
         double niedrigste = 0;
@@ -54,6 +54,7 @@ public class Aufgabe2 {
             System.out.println("Kleinster Wert: " + values[0]);
             System.out.println("Groesster Wert: " + values[values.length - 1]);
             System.out.println("Aritmetischer Mittelwert: " + mittelwert(values));
+            System.out.println("Standardabweichung: " + standardabweichung(values));
         }
 
         scanner.close();
@@ -69,5 +70,15 @@ public class Aufgabe2 {
         return sum / array.length;
     }
     
-    
+    //Aufgabe 3
+    public static double standardabweichung(double[] array) {
+        double sum = 0.0;
+        double mittel = mittelwert(array);
+
+        for (int i = 0; i < array.length; i++) {
+            sum += Math.pow(array[i] - mittel, 2);
+        }
+
+        return Math.sqrt(sum / array.length);
+    }
 }
