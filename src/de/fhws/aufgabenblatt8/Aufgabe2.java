@@ -15,13 +15,13 @@ public class Aufgabe2 {
         if (number <= 0) {
             System.out.println("Zahl muss groesser null sein");
         } else {
-            char[] numberArray = String.valueOf(number).toCharArray();
             System.out.println("Eingabe der Sterne:");
             int stars = scanner.nextInt();
-    
+            
             if (stars < 0) {
                 System.out.println("Zahl muss groesser gleich null sein");
             } else {
+                char[] numberArray = String.valueOf(number).toCharArray();
                 for (int i = numberArray.length - 1; i >= 0 ; i--) {
                     System.out.print(numberArray[i]);
         
