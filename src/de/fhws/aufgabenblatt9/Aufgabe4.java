@@ -23,7 +23,7 @@ public class Aufgabe4 {
         }
 
         for (int i = 0; i < b.length; i++) {
-            result[a.length - 1 + i] = b[i];
+            result[a.length + i] = b[i];
         }
 
         return result;
