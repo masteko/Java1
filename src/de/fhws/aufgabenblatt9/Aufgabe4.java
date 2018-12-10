@@ -10,22 +10,10 @@ public class Aufgabe4 {
         char[] b = {'1', 'u'};
         char[] aundb = konkatenieren(a, b);
 
-        for (int i = 0; i < aundb.length; i++) {
-            System.out.println(aundb[i]);
-        }
+        System.out.println(String.valueOf(aundb));
     }
 
     public static char[] konkatenieren(char[] a, char[] b) {
-        char[] result = new char[a.length + b.length];
-
-        for (int i = 0; i < a.length; i++) {
-            result[i] = a[i];
-        }
-
-        for (int i = 0; i < b.length; i++) {
-            result[a.length + i] = b[i];
-        }
-
-        return result;
+        return (String.valueOf(a) + String.valueOf(b)).toCharArray();
     }
 }
