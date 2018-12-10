@@ -5,29 +5,51 @@ package de.fhws.aufgabenblatt9;
  */
 public class Aufgabe1 {
     public static void main(String[] args) {
-        int[] lottozahlen = {4, 2, 34, 48, 47, 1};
+        int[] lottozahlen = zieheLottozahlen();
+        
+        sort(lottozahlen);
+
+        for (int i = 0; i < lottozahlen.length; i++) {
+            System.out.print(lottozahlen[i] + " ");
+        }
+    }
+
+    public static int[] zieheLottozahlen() {
+        boolean[] vergeben = new boolean[50];
+        int[] lottozahlen = new int[6];
+        int i = 0;
+
+        while (i < lottozahlen.length) {
+            int lottozahl = (int) (Math.random() * 49 + 1);
+            lottozahlen[i] = lottozahl;
+            if (!vergeben[lottozahl]) {
+                i++;
+                vergeben[lottozahl] = true;
+            }
+        }
+
+        return lottozahlen;
+    }
+
+    public static void sort(int[] array) {
         int niedrigste = 0;
         int index = 0;
-    
-        for (int i = 0; i < lottozahlen.length; i++) {
-            niedrigste = lottozahlen[i];
+
+        for (int i = 0; i < array.length; i++) {
+            niedrigste = array[i];
             index = i;
 
-            for (int y = i + 1; y < lottozahlen.length; y++) {
-                if (lottozahlen[y] < niedrigste) {
-                    niedrigste = lottozahlen[y];
+            for (int y = i + 1; y < array.length; y++) {
+                if (array[y] < niedrigste) {
+                    niedrigste = array[y];
                     index = y;
                 }
             }
 
             if (index != i) {
-                lottozahlen[index] = lottozahlen[i];
-                lottozahlen[i] = niedrigste;
+                array[index] = array[i];
+                array[i] = niedrigste;
             }
-        }
-        
-        for (int i = 0; i < lottozahlen.length; i++) {
-            System.out.print(lottozahlen[i] + " ");
         }
     }
 }
