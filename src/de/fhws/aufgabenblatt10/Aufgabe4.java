@@ -15,9 +15,11 @@ public class Aufgabe4 {
         String seite = "<body id=\"www‐wikipedia‐org\">"
             + "<div class=\"central‐textlogo\">"
             + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb"
-            + "/b/bb/Wikipedia_wordmark.svg/174px‐Wikipedia_wordmark.svg.png\""
+            + "/b/bb/Wikipedia_wordmark.svg/174px-Wikipedia_wordmark.svg.png\""
             + "</div>"
             + "</body>";
+
+            System.out.println(seite);
 
         int urlStartIndex = seite.indexOf("src=\"");
         String substring = seite.substring(urlStartIndex + 5);
