@@ -22,7 +22,7 @@ public class Aufgabe3 {
             System.out.print(tries++ + ". Versuch: ");
             for (int i = 0; i < foundCharacters.length; i++) {
                 c = foundCharacters[i];
-                System.out.print((c != '\u0000' ? c : '_') + " ");
+                System.out.print((c != 0 ? c : '_') + " ");
             }
             System.out.println();
             guess = scanner.nextLine().toUpperCase().toCharArray()[0];
