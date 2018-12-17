@@ -1,7 +1,6 @@
 package de.fhws.aufgabenblatt10;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
 
 /**
  * Aufgabe3
@@ -10,7 +9,9 @@ public class Aufgabe3 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] words = { "Programmiersprache", "Studium", "Hochhaus", "Schifffahrt", "Hörsaal" };
+        String[] words = { "Programmiersprache", "Studium", "Hochhaus", "Schifffahrt",
+            "Hörsaal", "Ich", "bin", "zu", "Faul", "mir", "zwanzig", "Wörter", "auszudenken",
+            "Wasser", "Flasche", "Tastatur", "Steckdose", "Monitor", "Tisch", "Fisch" };
         int tries = 1;
         char c;
         char guess;
@@ -27,9 +28,11 @@ public class Aufgabe3 {
             System.out.println();
             guess = scanner.nextLine().toUpperCase().toCharArray()[0];
 
-            for (int i = word.indexOf(guess); i >= 0; i = word.indexOf(guess, i + 1)) {
-                foundCharacters[i] = word.charAt(i);
-                gaps--;
+            if (String.valueOf(foundCharacters).indexOf(guess) == -1) {
+                for (int i = word.indexOf(guess); i >= 0; i = word.indexOf(guess, i + 1)) {
+                    foundCharacters[i] = word.charAt(i);
+                    gaps--;
+                }
             }
         } while(tries <= 15 && gaps > 0);
 
