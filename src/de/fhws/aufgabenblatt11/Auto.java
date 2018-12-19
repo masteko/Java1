@@ -19,6 +19,9 @@ public class Auto {
     }
 
     public static Auto groessterHubraum(Auto[] autos) {
+        if (autos.length == 0) {
+            throw new RuntimeException("Keine Autos übergeben");
+        }
         Auto result = autos[0];
         for (int i = 1; i < autos.length; i++) {
             if (result.hubraum < autos[i].hubraum) {
@@ -29,6 +32,7 @@ public class Auto {
         return result;
     }
 
+    @Override
     public String toString() {
         return "Marke: " + this.marke + ", Hubraum: " + this.hubraum + "l, Farbe: " + this.farbe + ", mit " + this.anzahlTueren + " Türen und einem " + this.motorTyp + " Motor.";
     }
