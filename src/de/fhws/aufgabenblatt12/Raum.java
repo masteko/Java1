@@ -1,4 +1,4 @@
-package de.fhws.bonusblatt;
+package de.fhws.aufgabenblatt12;
 
 /**
  * Raum
