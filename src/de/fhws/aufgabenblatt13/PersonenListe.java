@@ -20,6 +20,8 @@ public class PersonenListe {
                 n.setPrevAndNext(m, m.getNext());
                 m.getNext().setPrev(n);
                 m.setNext(n);
+            } else {
+                einfuegen(n, m.getNext());
             }
         } else {
             if (m.getPrev() == null) {
@@ -30,6 +32,8 @@ public class PersonenListe {
                 n.setPrevAndNext(m.getPrev(), m);
                 m.setNext(n);
                 m.getPrev().setNext(n);
+            } else {
+                einfuegen(n, m.getPrev());
             }
         }
     }
