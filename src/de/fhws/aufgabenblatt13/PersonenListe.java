@@ -24,17 +24,9 @@ public class PersonenListe {
                 einfuegen(n, m.getNext());
             }
         } else {
-            if (m.getPrev() == null) {
-                start = n;
-                n.setNext(m);
-                m.setPrev(n);
-            } else if (n.getAlter() > m.getPrev().getAlter()) {
-                n.setPrevAndNext(m.getPrev(), m);
-                m.setNext(n);
-                m.getPrev().setNext(n);
-            } else {
-                einfuegen(n, m.getPrev());
-            }
+            start = n;
+            n.setNext(m);
+            m.setPrev(n);
         }
     }
 
