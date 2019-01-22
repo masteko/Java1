@@ -19,7 +19,7 @@ public class Schachbrett {
 
         for (int row = 0; row < result.length; row++) {
             for (int col = 0; col < result[row].length; col++) {
-                result[row][col] = (row == 1 || row == 6) ? 'L' : 'B';
+                result[row][col] = (row == 1 || row == 6) ? 'B' : 'L';
             }
         }
 
