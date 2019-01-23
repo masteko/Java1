@@ -5,7 +5,7 @@ package de.fhws.misc;
  */
 public class Fach {
     private int number;
-    private boolean open;
+    private boolean open = false;
 
     public Fach(int number) {
         this.number = number;
