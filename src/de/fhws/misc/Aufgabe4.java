@@ -8,6 +8,7 @@ public class Aufgabe4 {
         Fach[] faecher = erzeugeFaecher(100);
         printFaecher(faecher);
         abendroutinte(faecher);
+        System.out.println(anzahlOffeneFaecher(faecher));
     }
 
     public static Fach[] erzeugeFaecher(int count) {
@@ -40,5 +41,15 @@ public class Aufgabe4 {
             }
             printFaecher(faecher);
         }
+    }
+
+    public static int anzahlOffeneFaecher(Fach[] faecher) {
+        int sum = 0;
+
+        for (int i = 0; i < faecher.length; i++) {
+            sum += faecher[i].isOpen() ? 1 : 0;
+        }
+
+        return sum;
     }
 }
