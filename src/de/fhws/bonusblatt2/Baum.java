@@ -7,10 +7,12 @@ public class Baum {
     private Knoten root;
 
     public void insert(Knoten k) {
-        if (root == null) {
-            root = k;
-        } else {
-            insert(k, root);
+        if (k != null) {
+            if (root == null) {
+                root = k;
+            } else {
+                insert(k, root);
+            }
         }
     }
 
@@ -35,14 +37,11 @@ public class Baum {
     }
 
     public void print(Knoten k) {
-        // if(k != null) {
-        //     print(k.getLeft());
-        //     System.out.println(k);
-        //     print(k.getRight());
-        // }
-        if(k.getLeft() != null) print(k.getLeft());
-        System.out.println(k);
-        if(k.getRight() != null) print(k.getRight());
+        if(k != null) {
+            print(k.getLeft());
+            System.out.println(k);
+            print(k.getRight());
+        }
     }
 
     public String search(String w) {
@@ -56,7 +55,7 @@ public class Baum {
             if (k.getWort().equals(w)) {
                 return k.getBedeutung();
             } else {
-                if (w.compareTo(k.getWort()) < 0) {
+                if (w.compareTo(k.getWort()) > 0) {
                     return search(w, k.getRight());
                 } else {
                     return search(w, k.getLeft());
@@ -67,9 +66,8 @@ public class Baum {
 
     public void loesche(Knoten k) {
         if(k == root) {
-            Knoten tmp = root.getLeft();
             root = root.getRight();
-            insert(tmp);
+            insert(k.getLeft());
         } else {
             if(k.getWort().compareTo(root.getWort()) > 0) {
                 loesche(k, root.getRight(), root);
@@ -80,21 +78,19 @@ public class Baum {
     }
 
     public void loesche(Knoten a, Knoten b, Knoten c) {
-        if (b == null) {
-            if (a == b) {
-                if(c.getWort().compareTo(b.getWort()) > 0) {
-                    c.setRight(b.getRight());
-                    insert(b.getLeft());
-                } else {
-                    c.setLeft(b.getLeft());
-                    insert(b.getRight());
-                }
+        if (a == b) {
+            if(a.getWort().compareTo(c.getWort()) > 0) {
+                c.setRight(b.getRight());
+                insert(b.getLeft());
             } else {
-                if(a.getWort().compareTo(b.getWort()) > 0) {
-                    loesche(a, b.getRight(), b);
-                } else {
-                    loesche(a, b.getLeft(), b);
-                }
+                c.setLeft(b.getRight());
+                insert(b.getLeft());
+            }
+        } else {
+            if (a.getWort().compareTo(b.getWort()) > 0) {
+                loesche(a, b.getRight(), b);
+            } else {
+                loesche(a, b.getLeft(), b);
             }
         }
     }

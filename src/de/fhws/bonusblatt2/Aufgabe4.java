@@ -16,7 +16,7 @@ public class Aufgabe4 {
         b.insert(new Knoten("bubu", "bla bla blaa asdf"));
         b.insert(new Knoten("zeppelin", "aabbbbaa"));
         b.insert(abba);
-        b.insert(new Knoten("Peter", "bla bla blaa asdf"));
+        b.insert(new Knoten("peter", "bla bla blaa asdf"));
         b.print();  
         System.out.println("----------------------");
         System.out.println(b.search("anton"));
