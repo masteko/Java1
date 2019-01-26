@@ -16,3 +16,4 @@ All solutions from Java 1
 - [additional sheet1](https://github.com/njester/Java1/tree/master/src/de/fhws/bonusblatt)
 - [additional sheet 2](https://github.com/njester/Java1/tree/master/src/de/fhws/bonusblatt2)
 - [misc](https://github.com/njester/Java1/tree/master/src/de/fhws/misc)
+- [vorbereitung](https://github.com/njester/Java1/tree/master/src/de/fhws/vorbereitung)
